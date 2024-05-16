@@ -8,9 +8,9 @@ If there's anything you want to keep, take it out of your inventory and store it
 
 Make sure all junk items to be dismantled are unlocked (this can easily be done with Destiny Item Manager).
 
-Once again-
 
-## Store weapons/armour that you want to keep in your Vault.
+
+# *Vault weapons/armour that you want to keep!!!!*
 
 All this macro does is automatically dismantle items in your inventory, rather than forcing you to sit and mindlessly hold the dismantle button.
 This does not violate ToS.
