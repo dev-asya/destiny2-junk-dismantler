@@ -8,7 +8,7 @@ If there's anything you want to keep, take it out of your inventory and store it
 
 Make sure all junk items to be dismantled are unlocked (this can easily be done with Destiny Item Manager).
 
-
+So far this only works on 1920 x 1080 resolution.
 
 # *Vault weapons/armour that you want to keep!!!!*
 
