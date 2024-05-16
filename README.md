@@ -13,6 +13,6 @@ So far this only works on 1920 x 1080 resolution.
 # *Vault weapons/armour that you want to keep!!!!*
 
 All this macro does is automatically dismantle items in your inventory, rather than forcing you to sit and mindlessly hold the dismantle button.
-This does not violate ToS.
+As this is purely an accessibility feature, it does not violate ToS.
 
 https://help.bungie.net/hc/en-us/articles/360049517431-Destiny-Account-Restrictions-and-Banning-Policies
