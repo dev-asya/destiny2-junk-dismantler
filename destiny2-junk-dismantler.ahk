@@ -1,0 +1,127 @@
+#SingleInstance Force
+;SendMode Event                  <----- This needs fixing
+
+weaponSlots := [1,2,3]
+armourSlots := [1,2,3,4,5]
+
+;This is the distance between (equipped) gear slots
+global_equipped_offset_x := 0 
+global_equipped_offset_y := 120
+
+;These are the distances between equipped gear slots and unequipped gear slots 
+weapon_unequipped_offset_x := -100  
+weapon_unequipped_offset_y := 0
+armour_unequipped_offset_x := 100 
+armour_unequipped_offset_y := 0
+
+;These are the coordinates of the starting positions for Kinetic Weapons and Helmet Armour
+weapon_kinetic_start_x := 520
+weapon_kinetic_start_y := 370
+armour_helmet_start_x := 1400
+armour_helmet_start_y := 250
+
+weapon_equipped := Array2D(3,2) ; A Multi-Dimensional Array containing 3 slots (Kinetic, Energy, Power) and their respective Screen Coordinates
+weapon_unequipped := Array2D(3,2)
+
+armour_equipped := Array2D(5,2) ; A Multi-Dimensional Array containing 5 slots (Helmet, Gauntlets, Chest, Legs, Class Item) and their respective Screen Coordinates
+armour_unequipped := Array2D(5,2)
+
+for i in weaponSlots{
+weapon_equipped[i,1] := weapon_kinetic_start_x + (i-1) * global_equipped_offset_x
+weapon_equipped[i,2] := weapon_kinetic_start_y + (i-1) * global_equipped_offset_y
+}
+
+for i in armourSlots{
+armour_equipped[i,1] := armour_helmet_start_x + (i-1) * global_equipped_offset_x
+armour_equipped[i,2] := armour_helmet_start_y + (i-1) * global_equipped_offset_y
+}
+
+
+weapon_unequipped_slot()
+armour_unequipped_slot()
+;--------------------------------------------------------------------------------------------------------------
+
+
+MouseMove 900, 900, 70 
+Sleep 1200
+dismantle_weapon(1)
+dismantle_weapon(2)
+dismantle_weapon(3)
+
+dismantle_armour(1)
+dismantle_armour(2)
+dismantle_armour(3)
+dismantle_armour(4)
+dismantle_armour(5)
+
+;---------------------------------------------------------------------------------------------------------------
+
+
+; This finds the coordinates of the first weapon in each slot that isn't equipped
+weapon_unequipped_slot()
+{   
+    for i in weaponSlots
+    {
+    weapon_unequipped[i,1] := weapon_equipped[i,1] + weapon_unequipped_offset_x 
+    weapon_unequipped[i,2] := weapon_equipped[i,2] + weapon_unequipped_offset_y
+    }
+    return
+} 
+
+; This finds the coordinates of the first armour piece in each slot that isn't equipped
+armour_unequipped_slot()
+{
+    for i in armourSlots
+    {
+        armour_unequipped[i,1] := armour_equipped[i,1] + armour_unequipped_offset_x
+        armour_unequipped[i,2] := armour_equipped[i,2] + armour_unequipped_offset_y
+    }   
+    return
+}
+
+; This dismantles all items in an inventory section
+dismantle_slot() 
+{
+    Loop 9 
+    {
+        Send "{F down}"
+        Sleep 4500  ; 4.5 seconds in milliseconds
+        Send "{F up}"
+        Sleep 500  ; 0.5 second delay before next iteration
+    }
+}
+
+
+dismantle_weapon(slot)
+{
+Sleep 1000
+MouseMove weapon_equipped[slot,1] , weapon_equipped[slot,2] , 90
+Sleep 1000
+MouseMove weapon_unequipped[slot,1] , weapon_unequipped[slot,2],90
+dismantle_slot()
+}
+
+dismantle_armour(slot)
+{
+Sleep 1000
+MouseMove armour_equipped[slot,1] , armour_equipped[slot,2] , 80
+Sleep 1000
+MouseMove armour_unequipped[slot,1] , armour_unequipped[slot,2] , 90
+dismantle_slot()
+}
+
+class Array2D extends Array 
+{
+    __new(x, y) 
+    {
+        this.Length := x * y
+        this.Width := x
+        this.Height := y
+    }
+    __Item[x, y] 
+    {
+        get => super.Has(this.i[x, y]) ? super[this.i[x, y]] : false
+        set => super[this.i[x, y]] := value
+    }
+    i[x, y] => this.Width * (y-1) + x
+}
