@@ -17,5 +17,6 @@ As this is purely an accessibility feature, it does not violate ToS.
 https://help.bungie.net/hc/en-us/articles/360049517431-Destiny-Account-Restrictions-and-Banning-Policies
 
 # Future Plans
-- Implement controller support to allow for tabbed-out dismantling
 - Play a sound when finished
+- Adjust mouse movement speed
+- Implement controller support to allow for tabbed-out dismantling
