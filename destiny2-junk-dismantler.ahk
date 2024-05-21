@@ -1,6 +1,5 @@
 #SingleInstance Force
-;SendMode Event                  <----- This needs fixing
-;At present, this macro only works for 1080p displays.
+#Requires Autohotkey v2
 
 weaponSlots := [1,2,3]
 armourSlots := [1,2,3,4,5]
@@ -41,6 +40,8 @@ weapon_unequipped_slot()
 armour_unequipped_slot()
 ;--------------------------------------------------------------------------------------------------------------
 ;This implements a GUI asking the user to input what they want to dismantle.
+
+;Easy_AutoGUI_for_AHKv2 github.com/samfisherirl/Easy-Auto-GUI-for-AHK-v2
 GuiOptions := ""
 GuiTitle := "dev-asya's Destiny 2 Junk Dismantler :)"
 
@@ -138,7 +139,7 @@ MouseMove armour_unequipped[slot,1] , armour_unequipped[slot,2] , 90
 dismantle_slot()
 }
 
-; This dismantles all items in an inventory section
+; This dismantles all items in an inventory slot
 dismantle_slot()  {
     Loop 9 {
         Sleep 500
