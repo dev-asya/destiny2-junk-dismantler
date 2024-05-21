@@ -1,5 +1,6 @@
 #SingleInstance Force
 #Requires Autohotkey v2
+SendMode("Event")
 
 weaponSlots := [1,2,3]
 armourSlots := [1,2,3,4,5]
@@ -124,29 +125,28 @@ armour_unequipped_slot() {
 }
 
 dismantle_weapon(slot) {
-Sleep 1000
-MouseMove weapon_equipped[slot,1] , weapon_equipped[slot,2] , 90
-Sleep 1000
-MouseMove weapon_unequipped[slot,1] , weapon_unequipped[slot,2],90
+Sleep 800
+MouseMove weapon_equipped[slot,1] , weapon_equipped[slot,2] , 5
+Sleep 300
+MouseMove weapon_unequipped[slot,1] , weapon_unequipped[slot,2],5
 dismantle_slot()
 }
 
 dismantle_armour(slot) {
-Sleep 1000
-MouseMove armour_equipped[slot,1] , armour_equipped[slot,2] , 80
-Sleep 1000
-MouseMove armour_unequipped[slot,1] , armour_unequipped[slot,2] , 90
+Sleep 800
+MouseMove armour_equipped[slot,1] , armour_equipped[slot,2] , 5
+Sleep 300
+MouseMove armour_unequipped[slot,1] , armour_unequipped[slot,2] , 5
 dismantle_slot()
 }
 
 ; This dismantles all items in an inventory slot
 dismantle_slot()  {
     Loop 9 {
-        Sleep 500
+        Sleep 600 ; Slight delay, to account for inventories that load slower
         Send "{F down}"
         Sleep 4500  ; 4.5 seconds in milliseconds
         Send "{F up}"
-        Sleep 500  ; 0.5 second delay before next iteration
     }
 }
 ;-----------------------------------------------------------------------------------------------------

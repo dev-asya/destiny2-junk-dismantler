@@ -18,5 +18,5 @@ https://help.bungie.net/hc/en-us/articles/360049517431-Destiny-Account-Restricti
 
 # Future Plans
 - Play a sound when finished
-- Adjust mouse movement speed
 - Implement controller support to allow for tabbed-out dismantling
+- Implement support for higher resolutions
