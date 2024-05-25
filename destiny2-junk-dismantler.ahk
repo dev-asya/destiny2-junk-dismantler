@@ -1,7 +1,6 @@
 #SingleInstance Force
 #Requires Autohotkey v2
 
-
 weaponSlots := [1,2,3]
 armourSlots := [1,2,3,4,5]
 
@@ -41,7 +40,7 @@ weapon_unequipped_slot()
 armour_unequipped_slot()
 ;--------------------------------------------------------------------------------------------------------------
 ;This implements a GUI asking the user to input what they want to dismantle.
-
+;This was a good challenge
 ;Easy_AutoGUI_for_AHKv2 github.com/samfisherirl/Easy-Auto-GUI-for-AHK-v2
 GuiOptions := ""
 GuiTitle := "dev-asya's Destiny 2 Junk Dismantler :)"
@@ -130,6 +129,7 @@ Sleep 800
 MouseMove weapon_equipped[slot,1] , weapon_equipped[slot,2] , 5
 Sleep 300
 MouseMove weapon_unequipped[slot,1] , weapon_unequipped[slot,2],5
+SendMode("Input")
 dismantle_slot()
 }
 
@@ -139,16 +139,16 @@ Sleep 800
 MouseMove armour_equipped[slot,1] , armour_equipped[slot,2] , 5
 Sleep 300
 MouseMove armour_unequipped[slot,1] , armour_unequipped[slot,2] , 5
+SendMode("Input")
 dismantle_slot()
 }
 
 ; This dismantles all items in an inventory slot
 dismantle_slot()  {
-    SendMode("Input")
     Loop 9 {
-        Sleep 600 ; Slight delay, to account for inventories that load slower
+        Sleep 600 ; Slight delay to account for loading times
         Send "{F down}"
-        Sleep 4500  ; 4.5 seconds in milliseconds
+        Sleep 4500  ; 4.5 seconds to dismantle exotics & crafted weapons
         Send "{F up}"
     }
 }
