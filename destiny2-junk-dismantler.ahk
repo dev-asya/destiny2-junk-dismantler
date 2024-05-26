@@ -40,6 +40,7 @@ weapon_unequipped_slot()
 armour_unequipped_slot()
 ;--------------------------------------------------------------------------------------------------------------
 ;This implements a GUI asking the user to input what they want to dismantle.
+
 ;This was a good challenge
 ;Easy_AutoGUI_for_AHKv2 github.com/samfisherirl/Easy-Auto-GUI-for-AHK-v2
 GuiOptions := ""

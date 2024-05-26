@@ -20,3 +20,6 @@ https://help.bungie.net/hc/en-us/articles/360049517431-Destiny-Account-Restricti
 - Play a sound when finished
 - Implement controller support to allow for tabbed-out dismantling
 - Implement support for higher resolutions
+
+# Thanks
+- Easy_AutoGUI_for_AHKv2 github.com/samfisherirl/Easy-Auto-GUI-for-AHK-v2
