@@ -22,4 +22,4 @@ https://help.bungie.net/hc/en-us/articles/360049517431-Destiny-Account-Restricti
 - Implement support for higher resolutions
 
 # Thanks
-- Easy_AutoGUI_for_AHKv2 github.com/samfisherirl/Easy-Auto-GUI-for-AHK-v2
+- Easy AutoGUI for AHKv2  https://github.com/samfisherirl/Easy-Auto-GUI-for-AHK-v2
