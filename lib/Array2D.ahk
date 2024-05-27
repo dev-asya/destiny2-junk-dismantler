@@ -8,5 +8,5 @@ class Array2D extends Array {
         get => super.Has(this.i[x, y]) ? super[this.i[x, y]] : false
         set => super[this.i[x, y]] := value
     }
-    i[x, y] => this.Width * (y-1) + x
+    i[x, y] => this.Width * (y - 1) + x
 }
