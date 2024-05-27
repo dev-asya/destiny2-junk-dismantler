@@ -1,5 +1,7 @@
 #SingleInstance Force
 #Requires Autohotkey v2
+#Include "lib\Array2D.ahk"
+
 
 weaponSlots := [1,2,3]
 armourSlots := [1,2,3,4,5]
@@ -154,15 +156,3 @@ dismantle_slot()  {
     }
 }
 ;-----------------------------------------------------------------------------------------------------
-class Array2D extends Array {
-    __new(x, y) {
-        this.Length := x * y
-        this.Width := x
-        this.Height := y
-    }
-    __Item[x, y] {
-        get => super.Has(this.i[x, y]) ? super[this.i[x, y]] : false
-        set => super[this.i[x, y]] := value
-    }
-    i[x, y] => this.Width * (y-1) + x
-}
