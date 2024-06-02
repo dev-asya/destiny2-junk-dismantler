@@ -37,6 +37,7 @@ DismantleSpecifiedJunk(*)
     Sleep 1200
 
     if ToDismantle.Kinetic = 1 {
+        Sleep 100 ; A tiny pause to make sure the dismantle key isn't held down too early
         dismantle_weapon(1)
     }
     if ToDismantle.Energy = 1 {
